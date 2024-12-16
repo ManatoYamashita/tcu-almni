@@ -2,7 +2,7 @@ import Hero from '@/app/_components/Hero';
 import Sheet from '@/app/_components/Sheet';
 
 export const metadata = {
-  title: 'ニュース｜シンプルなコーポレートサイト',
+  title: 'ニュース｜東京都市大学校友会',
 };
 
 type Props = {

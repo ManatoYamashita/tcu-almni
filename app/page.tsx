@@ -13,6 +13,16 @@ export default async function Page() {
   });
   return (
     <>
+      <div className={styles.studentCard}>
+        <Image
+          className={styles.studentCardImg}
+          src="/tcualmni-like-studentCard.webp"
+          alt="東京都市大学 校友会"
+          width={3600}
+          height={1200}
+          priority
+        />
+      </div>
       <div className={styles.titleSection}>
         <h1 className={styles.title}>心からのつながり</h1>
         <p className={styles.description}>
@@ -20,15 +30,6 @@ export default async function Page() {
         </p>
       </div>
       <section className={styles.top}>
-
-        {/* <Image
-          className={styles.bgimg}
-          src="/img-mv.jpg"
-          alt=""
-          width={3600}
-          height={1200}
-          priority
-        /> */}
         <video className={styles.bgimg} autoPlay loop muted playsInline>
           <source src="/tcu-armni-sin.webm" type="video/webm" className={styles.herovideo} />
         </video>

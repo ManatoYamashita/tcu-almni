@@ -1,3 +1,23 @@
+.studentCard {
+  position: absolute;
+  top: 175px;
+  left: -150px;
+  z-index: 1;
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.3));
+}
+.studentCardImg {
+  width: 50%;
+  height: auto;
+  min-width: 300px;
+  transform: rotate(15deg);
+  transform-origin: bottom left;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.studentCardImg:hover {
+  transform: rotate(20deg);
+}
 .titleSection {
   margin: 10px 0 50px;
   padding-top: 50px;
@@ -159,6 +179,9 @@
 }
 
 @media (max-width: 640px) {
+  .studentCard {
+    top: 100px;
+  }
   .top {
     padding: 120px 16px;
   }
