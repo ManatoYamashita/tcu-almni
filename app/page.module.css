@@ -1,6 +1,6 @@
 .studentCard {
   position: absolute;
-  top: 175px;
+  top: 0;
   left: -150px;
   z-index: 1;
   filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.3));
@@ -178,9 +178,9 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 780px) {
   .studentCard {
-    top: 100px;
+    top: 300px;
   }
   .top {
     padding: 120px 16px;

@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function ActivityHighlight() {
   return (
@@ -10,8 +11,8 @@ export default function ActivityHighlight() {
       </CardHeader>
       <CardContent>
         <div className="aspect-video relative mb-4">
-          <img
-            src="/placeholder.svg?height=300&width=400"
+          <Image
+            src="/images/placeholder.webp"
             alt="活動の様子"
             className="object-cover w-full h-full"
           />
@@ -27,3 +28,4 @@ export default function ActivityHighlight() {
     </Card>
   )
 }
+

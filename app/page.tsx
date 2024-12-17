@@ -4,6 +4,7 @@ import { TOP_NEWS_LIMIT } from '@/app/_constants';
 import NewsList from '@/app/_components/NewsList';
 import styles from './page.module.css';
 import ButtonLink from '@/app/_components/ButtonLink';
+import TopHero from '@/app/_components/TopHero';
 
 export const revalidate = 60;
 
@@ -13,6 +14,13 @@ export default async function Page() {
   });
   return (
     <>
+      <TopHero
+        title="心からの"
+        titlePrimary="つながり"
+        description="平成25年4月1日より、武蔵工業大学、東横学園女子短期大学及び東京都市大学の卒業生を正会員とし、また、在学生を準会員とする「東京都市大学 校友会」が発足しました。"
+        primaryButtonText="もっとみる"
+        secondaryButtonText="お問い合わせ"
+      />
       <div className={styles.studentCard}>
         <Image
           className={styles.studentCardImg}
@@ -23,12 +31,12 @@ export default async function Page() {
           priority
         />
       </div>
-      <div className={styles.titleSection}>
+      {/* <div className={styles.titleSection}>
         <h1 className={styles.title}>心からのつながり</h1>
         <p className={styles.description}>
           武蔵工業大学 → 東京都市大学
         </p>
-      </div>
+      </div> */}
       <section className={styles.top}>
         <video className={styles.bgimg} autoPlay loop muted playsInline>
           <source src="/tcu-armni-sin.webm" type="video/webm" className={styles.herovideo} />
