@@ -9,10 +9,22 @@
   width: 50%;
   height: auto;
   min-width: 300px;
-  transform: rotate(15deg);
+  transform: rotate(-75deg);
   transform-origin: bottom left;
   cursor: pointer;
+  will-change: transform;
   transition: transform 0.3s ease;
+  animation: rotateIn 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  animation-delay: 2s;
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(-75deg);
+  }
+  to {
+    transform: rotate(15deg);
+  }
 }
 
 .studentCardImg:hover {
