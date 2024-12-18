@@ -18,7 +18,7 @@
   --color-border: #ddd;
   --color-border-light: #f3f3f3;
   --color-current: #eee;
-  --color-button-primary: #00A7EB;  /* TCU BLUE */
+  --tcu-blue: #00A7EB;  /* TCU BLUE */
   --border-radius: 4px;
 }
 
@@ -63,7 +63,9 @@ ul {
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
+    /* --primary: 222.2 47.4% 11.2%; */
+    --primary: #00A7EB;  /* TCU BLUE */
+    --tcu-blue: #00A7EB;  /* TCU BLUE */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;

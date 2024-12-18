@@ -14,6 +14,7 @@ const config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+			"tcu-blue": "#00A7EB;",
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -25,7 +26,7 @@ const config = {
   				foreground: 'hsl(var(--popover-foreground))'
   			},
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
+  				DEFAULT: 'hsl(var(--tcu-blue))',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
   			secondary: {

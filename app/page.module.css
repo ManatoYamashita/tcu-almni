@@ -60,8 +60,9 @@
 
 .newsLink {
   position: absolute;
-  right: -40px;
-  bottom: -40px;
+  right: 0;
+  bottom: -24px;
+  transform: scale(1.5);
 }
 
 .section {
@@ -194,6 +195,7 @@
     right: auto;
     bottom: auto;
     margin-top: 16px;
+    transform: scale(1);
   }
 
   .section {

@@ -87,7 +87,7 @@ export default function TopHero({ title, titlePrimary, description, primaryButto
                     <div ref={titleWrapperRef} className="opacity-0 leading-10">
                         <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white inline-flex flex-wrap">
                             {title}&nbsp;
-                            <span className="text-blue-600">
+                            <span className="text-tcu-blue">
                                 {titlePrimary}
                             </span>
                         </h1>

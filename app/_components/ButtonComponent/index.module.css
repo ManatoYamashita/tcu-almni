@@ -4,7 +4,7 @@
     height: 3rem;
     padding: 0 2rem;
     border-radius: 1.5rem;
-    background: #3d3a4e;
+    background: var(--tcu-blue);
     background-size: 400%;
     color: #fff;
     border: none;
