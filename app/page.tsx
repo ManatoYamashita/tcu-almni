@@ -6,10 +6,12 @@ import styles from './page.module.css';
 import ButtonLink from '@/app/_components/ButtonLink';
 import TopHero from '@/app/_components/TopHero';
 import HightLight from '@/app/_components/Highlights';
+import StudentCard from '@/app/_components/StudentCard';
 
 export const revalidate = 60;
 
 export default async function Page() {
+
   const data = await getNewsList({
     limit: TOP_NEWS_LIMIT,
   });
@@ -22,16 +24,9 @@ export default async function Page() {
         primaryButtonText="もっとみる"
         secondaryButtonText="お問い合わせ"
       />
-      <div className={styles.studentCard}>
-        <Image
-          className={styles.studentCardImg}
-          src="/tcualmni-like-studentCard.webp"
-          alt="東京都市大学 校友会"
-          width={3600}
-          height={1200}
-          priority
-        />
-      </div>
+
+      <StudentCard href='/about' ariaLabel='校友会について' />
+
       <section className={styles.top}>
         <video className={styles.bgimg} autoPlay loop muted playsInline>
           <source src="/tcu-armni-sin.webm" type="video/webm" className={styles.herovideo} />

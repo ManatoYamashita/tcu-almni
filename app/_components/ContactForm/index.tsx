@@ -60,7 +60,7 @@ export default function ContactForm() {
         <label className={styles.label} htmlFor="conpany">
           会社名
         </label>
-        <input className={styles.textfield} type="text" id="company" ref={companyRef} />
+        {/* <input className={styles.textfield} type="text" id="company" ref={companyRef} /> */}
       </div>
       <div className={styles.item}>
         <label className={styles.label} htmlFor="email">

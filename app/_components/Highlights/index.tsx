@@ -76,22 +76,22 @@ const HightLightCard = ({
 const HightLight = () => {
   const blogPosts = [
     {
-      imageUrl: "/placeholder.webp",
-      avatarUrl: "/placeholder.webp",
-      authorName: "Gloria",
-      date: "Jan 09, 2021",
-      title: "Facebook is creating a news section in Watch to feature breaking news",
-      description: "Facebook launched the Watch platform in August",
-      href: "#"
+      imageUrl: "/note-activity.webp",
+      avatarUrl: "/note.webp",
+      authorName: "東京都市大学 校友会",
+      date: "note.com",
+      title: "活動記録",
+      description: "校友会の活動おご紹介しています。",
+      href: "https://note.com/tcu_alumni/m/mc4c284fc2d19"
     },
     {
-      imageUrl: "/placeholder.webp",
-      avatarUrl: "/placeholder.webp",
-      authorName: "Gloria",
-      date: "May 30, 2021",
-      title: "What CFR (Conversations, Feedback, Recognition) really is about",
-      description: "For a lot of people these days, Measure What Matters.",
-      href: "#"
+      imageUrl: "/note-interview.webp",
+      avatarUrl: "/note.webp",
+      authorName: "東京都市大学 校友会",
+      date: "note.com",
+      title: "インタビュー",
+      description: "校友会で活躍する役員や卒業生のインタビューを掲載しています。",
+      href: "https://note.com/tcu_alumni/m/m729119dab099"
     }
   ];
 

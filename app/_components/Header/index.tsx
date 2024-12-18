@@ -87,16 +87,16 @@ const Header = () => {
           {/* Logo */}
           <Link href="/" className="text-xl font-bold menu-item">
             <Image 
-                src="/tcu-armni-logo.jpg"
+                src="/tcu-alumni_logo.webp"
                 alt="東京都市大学 校友会"
-                width={160}
-                height={40}
+                width={250}
+                height={100}
             />
           </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-8">
-            {['Home', 'About', 'Services', 'Contact'].map((item, index) => (
+            {['知る', '参加する', '集う', '手続き', '学ぶ'].map((item, index) => (
               <Link
                 key={item}
                 href={`/${item.toLowerCase()}`}
