@@ -4,6 +4,7 @@
     left: -150px;
     z-index: 1;
     filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.3));
+    pointer-events: none;
   }
   
   .studentCardImg {
@@ -15,6 +16,7 @@
     cursor: pointer;
     transform: rotate(-75deg);
     will-change: transform;
+    pointer-events: all;
   }
 
 @media screen and (max-width: 768px) {

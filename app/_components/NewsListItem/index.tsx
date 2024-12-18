@@ -24,7 +24,7 @@ export default function NewsListItem({ news }: Props) {
         ) : (
           <Image
             className={styles.image}
-            src="/no-image.png"
+            src="/placeholder.webp"
             alt="No Image"
             width={1200}
             height={630}

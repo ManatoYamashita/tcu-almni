@@ -7,48 +7,22 @@ import type {
 } from 'microcms-js-sdk';
 import { notFound } from 'next/navigation';
 
-// カテゴリーの型定義
+// APIの型定義
 export type Category = {
+  id: string;
   name: string;
-} & MicroCMSContentId &
-  MicroCMSDate;
+} & MicroCMSContentId & MicroCMSDate;
 
-// ニュースの型定義
 export type News = {
   title: string;
-  description: string;
   content: string;
   thumbnail?: MicroCMSImage;
   category: Category;
-};
+} & MicroCMSContentId & MicroCMSDate;
 
-// メンバーの型定義
-export type Member = {
-  name: string;
-  position: string;
-  profile: string;
-  image?: MicroCMSImage;
-};
-
-// 事業内容の型定義
-export type Business = {
-  logo?: MicroCMSImage;
-  description: string;
-  image?: MicroCMSImage;
-  link: string;
-};
-
-// メタ情報の型定義
-export type Meta = {
-  title?: string;
+export type Article = News & MicroCMSContentId & MicroCMSDate & {
   description?: string;
-  ogTitle?: string;
-  ogDescription?: string;
-  ogImage?: MicroCMSImage;
-  canonical?: string;
 };
-
-export type Article = News & MicroCMSContentId & MicroCMSDate;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');
@@ -58,91 +32,70 @@ if (!process.env.MICROCMS_API_KEY) {
   throw new Error('MICROCMS_API_KEY is required');
 }
 
-// Initialize Client SDK.
+// API Client
 export const client = createClient({
   serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
   apiKey: process.env.MICROCMS_API_KEY,
 });
 
-// ニュース一覧を取得
+// News API
 export const getNewsList = async (queries?: MicroCMSQueries) => {
-  const listData = await client
-    .getList<News>({
+  try {
+    const response = await client.getList<News>({
       endpoint: 'news',
       queries,
-    })
-    .catch(notFound);
-  return listData;
+    });
+    return response;
+  } catch (error) {
+    console.error('Failed to fetch news:', error);
+    throw error;
+  }
 };
 
-// ニュースの詳細を取得
-export const getNewsDetail = async (contentId: string, queries?: MicroCMSQueries) => {
-  const detailData = await client
-    .getListDetail<News>({
+export const getNewsDetail = async (
+  contentId: string,
+  queries?: MicroCMSQueries,
+) => {
+  try {
+    const response = await client.getListDetail<News>({
       endpoint: 'news',
       contentId,
       queries,
-    })
-    .catch(notFound);
-
-  return detailData;
+    });
+    return response;
+  } catch (error) {
+    console.error('Failed to fetch news detail:', error);
+    notFound();
+  }
 };
 
-// カテゴリーの一覧を取得
+// Categories API
 export const getCategoryList = async (queries?: MicroCMSQueries) => {
-  const listData = await client
-    .getList<Category>({
+  try {
+    const response = await client.getList<Category>({
       endpoint: 'categories',
       queries,
-    })
-    .catch(notFound);
-
-  return listData;
+    });
+    return response;
+  } catch (error) {
+    console.error('Failed to fetch categories:', error);
+    throw error;
+  }
 };
 
-// カテゴリーの詳細を取得
-export const getCategoryDetail = async (contentId: string, queries?: MicroCMSQueries) => {
-  const detailData = await client
-    .getListDetail<Category>({
+export const getCategoryDetail = async (
+  contentId: string,
+  queries?: MicroCMSQueries,
+) => {
+  try {
+    const response = await client.getListDetail<Category>({
       endpoint: 'categories',
       contentId,
       queries,
-    })
-    .catch(notFound);
-
-  return detailData;
-};
-
-// メンバー一覧を取得
-export const getMembersList = async (queries?: MicroCMSQueries) => {
-  const listData = await client
-    .getList<Member>({
-      endpoint: 'members',
-      queries,
-    })
-    .catch(notFound);
-  return listData;
-};
-
-// 事業内容一覧を取得
-export const getBusinessList = async (queries?: MicroCMSQueries) => {
-  const listData = await client
-    .getList<Business>({
-      endpoint: 'business',
-      queries,
-    })
-    .catch(notFound);
-  return listData;
-};
-
-// メタ情報を取得
-export const getMeta = async (queries?: MicroCMSQueries) => {
-  const data = await client
-    .getObject<Meta>({
-      endpoint: 'meta',
-      queries,
-    })
-    .catch(() => null);
-
-  return data;
+    });
+    return response;
+  } catch (error) {
+    console.error('Failed to fetch category detail:', error);
+    notFound();
+  }
 };

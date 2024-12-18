@@ -3,7 +3,7 @@ import { getNewsList } from '@/app/_libs/microcms';
 import { TOP_NEWS_LIMIT } from '@/app/_constants';
 import NewsList from '@/app/_components/NewsList';
 import styles from './page.module.css';
-import ButtonLink from '@/app/_components/ButtonLink';
+import ButtonComponent from '@/app/_components/ButtonComponent';
 import TopHero from '@/app/_components/TopHero';
 import HightLight from '@/app/_components/Highlights';
 import StudentCard from '@/app/_components/StudentCard';
@@ -36,7 +36,7 @@ export default async function Page() {
         <h2 className={styles.newsTitle}>News</h2>
         <NewsList articles={data.contents} />
         <div className={styles.newsLink}>
-          <ButtonLink href="/news">もっとみる</ButtonLink>
+          <ButtonComponent href="about" label="もっと見る" />
         </div>
       </section>
       <section className={styles.section}>
@@ -48,7 +48,7 @@ export default async function Page() {
             私が会長である３年間、この目的を見失わず、「心からのつながりを誰もが得られる会を目指して行動する」という方向性を会員の皆さんと共有しながら、会の活動を進めてゆきたいと考えています。 
             人は、誰かと、あるいはモノや情報などの何かとつながりを持つからには、自分の心から望むつながりが欲しいものです。 
             </p>
-            <ButtonLink href="/404">もっとみる</ButtonLink>
+            <ButtonComponent href="about" label="もっと見る" />
           </div>
           <Image
             className={styles.kaichoImg}
