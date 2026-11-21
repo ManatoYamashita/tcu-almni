@@ -5,29 +5,30 @@ import Article from '@/app/_components/Article';
 import styles from './page.module.css';
 import ButtonLink from '@/app/_components/ButtonLink';
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string };
-}): Promise<Metadata> {
-  const news = await getNewsDetail(params.id);
+export async function generateMetadata({ params }: Pick<Props, 'params'>): Promise<Metadata> {
+  // ルートのパラメータは [slug]（以前は存在しない params.id を参照していた）
+  const { slug } = await params;
+  const news = await getNewsDetail(slug);
   return generateNewsMetadata(news);
 }
 
 type Props = {
-  params: {
+  // Next.js 15 以降、params / searchParams は Promise として渡される
+  params: Promise<{
     slug: string;
-  };
-  searchParams: {
-    dk: string;
-  };
+  }>;
+  searchParams: Promise<{
+    dk?: string;
+  }>;
 };
 
 export const revalidate = 60;
 
 export default async function Page({ params, searchParams }: Props) {
-  const data = await getNewsDetail(params.slug, {
-    draftKey: searchParams.dk,
+  const { slug } = await params;
+  const { dk } = await searchParams;
+  const data = await getNewsDetail(slug, {
+    draftKey: dk,
   });
   return (
     <>
